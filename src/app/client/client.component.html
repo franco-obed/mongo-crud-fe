@@ -1,0 +1,32 @@
+<div class="container">
+
+    <form (ngSubmit)="add()" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" [(ngModel)]="client.name" name="name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Country</label>
+            <input type="text" class="form-control" [(ngModel)]="client.country" name="country">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div class="container">
+
+    <table class="table">
+
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>País</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clientArray">
+                <td>{{client.id}}</td>
+                <td>{{client.name}}</td>
+                <td>{{client.country}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
